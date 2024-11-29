@@ -1,0 +1,7 @@
+{
+    "editor.fontSize": 15,
+    "workbench.editor.decorations.colors": true,
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.preferredLightColorTheme": "Default Dark+",
+    "window.commandCenter": true
+}

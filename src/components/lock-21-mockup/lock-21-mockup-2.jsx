@@ -9,6 +9,7 @@ Files: public/lock-21-mockup-2.glb [28.03MB] > /home/user/lock21.info-react-thre
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
+// eslint-disable-next-line react/prop-types
 export default function Model({ hovered, ...props }) {
   const { nodes, materials } = useGLTF('/lock-21-mockup-2-transformed.glb')
   return (
@@ -36,7 +37,11 @@ export default function Model({ hovered, ...props }) {
       <mesh name='mockup_zone_19' castShadow receiveShadow geometry={nodes.mockup_zone_19.geometry} material={materials['carte Baets n/b']} position={[0.224, 0, 0]} scale={35.794} />
       <mesh name='mockup_zone_20' castShadow receiveShadow geometry={nodes.mockup_zone_20.geometry} material={materials['carte Baets n/b']} position={[0.224, 0, 0]} scale={35.794} />
       <mesh name='mockup_zone_9' castShadow receiveShadow geometry={nodes.mockup_zone_9.geometry} material={materials['carte Baets n/b']} position={[0.224, 7.285, 0]} scale={35.794} />
-      <mesh name='zone_8' castShadow receiveShadow geometry={nodes.zone_8.geometry} material={materials.Material_0} position={[-53.191, 7.078, -28.542]} rotation={[-Math.PI / 2, 0, 0]} scale={0.305} />
+      <Select enabled={hovered?.startsWith('zone_8')}>
+        <mesh name='zone_8' castShadow receiveShadow geometry={nodes.zone_8.geometry} material={materials.Material_0} position={[-53.191, 7.078, -28.542]} rotation={[-Math.PI / 2, 0, 0]} scale={0.305} />
+        <mesh name='zone_8_-_plane' castShadow receiveShadow geometry={nodes['zone_8_-_plane'].geometry} material={materials['Material.010']} position={[-50.75, 0, -26.106]} />
+        <mesh name='8' castShadow receiveShadow geometry={nodes['8'].geometry} material={materials['numéro de zone']} position={[-52.389, 7.393, -37.382]} />
+      </Select>
       <mesh name='1' castShadow receiveShadow geometry={nodes['1'].geometry} material={materials['numéro de zone']} position={[-33.594, 2.417, -32.164]} />
       <mesh name='2' castShadow receiveShadow geometry={nodes['2'].geometry} material={materials['numéro de zone']} position={[-33.594, 0.213, -23.89]} />
       <mesh name='3' castShadow receiveShadow geometry={nodes['3'].geometry} material={materials['numéro de zone']} position={[-33.594, 0.213, -15.474]} />
@@ -54,8 +59,6 @@ export default function Model({ hovered, ...props }) {
       <mesh name='18' castShadow receiveShadow geometry={nodes['18'].geometry} material={materials['numéro de zone']} position={[-82.864, 3.383, 2.583]} />
       <mesh name='19' castShadow receiveShadow geometry={nodes['19'].geometry} material={materials['numéro de zone']} position={[-70.322, 3.383, 6.884]} />
       <mesh name='20' castShadow receiveShadow geometry={nodes['20'].geometry} material={materials['numéro de zone']} position={[-54.496, 3.383, 10.463]} />
-      <mesh name='8' castShadow receiveShadow geometry={nodes['8'].geometry} material={materials['numéro de zone']} position={[-52.389, 7.393, -37.382]} />
-      <mesh name='Plane' castShadow receiveShadow geometry={nodes.Plane.geometry} material={materials['Material.010']} position={[-50.75, 0, -26.106]} />
     </group>
   )
 }
